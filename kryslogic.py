@@ -15,7 +15,7 @@ def get_savings():
             print("Invalid input. Please enter a numeric value.")
 
 # Page 2: Get expense categories and their amounts
-def get_expenses():
+def get_expenses(savings):
     categories = {}
     print("\nEnter your 5 expense categories and the amount spent in each:")
 
@@ -30,6 +30,8 @@ def get_expenses():
                 amount = float(input(f"Enter the amount spent on {category}: "))
                 if amount < 0:
                     print("Expense amount cannot be negative. Please enter a valid amount.")
+                elif amount > savings:
+                    print("Cannot enter amount thats greater than savings")
                 else:
                     categories[category] = amount
                     break
