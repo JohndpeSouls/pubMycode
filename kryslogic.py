@@ -68,7 +68,7 @@ def main():
     savings = get_savings()
 
     # Page 2
-    expenses = get_expenses()
+    expenses = get_expenses(savings)
 
     # Page 3
     display_report(savings, expenses)
